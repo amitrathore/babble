@@ -1,7 +1,10 @@
-(ns org.rathore.amit.babble.feature)
+(ns org.rathore.amit.babble.feature
+  (:use [com.cinch.furtive.utils.core]))
 
 (defn specs-for [attrib-name specs]
-  (let [type-spec? #(= attrib-name (first %))
+  (let [type-spec? (fn [spec] 
+                     (when (sequential? spec)
+                       (= attrib-name (first spec))))
 	extractor (comp next first)]
     (extractor (filter type-spec? specs))))
 
