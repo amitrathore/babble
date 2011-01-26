@@ -1,5 +1,4 @@
-(ns org.rathore.amit.babble.feature
-  (:use [com.cinch.furtive.utils.core]))
+(ns org.rathore.amit.babble.feature)
 
 (defn specs-for [attrib-name specs]
   (let [type-spec? (fn [spec] 
