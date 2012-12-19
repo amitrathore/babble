@@ -1,6 +1,6 @@
-(ns zolo.babble.feature-spec
+(ns zolo.babble.feature-test
  (:use [clojure.test :only [run-tests deftest is]])
- (:use org.rathore.amit.babble.feature))
+ (:use zolo.babble.feature))
 
 (def *some-var*)
 

@@ -1,13 +1,14 @@
 (ns zolo.babble.feature)
 
 (defn specs-for [attrib-name specs]
-  (let [type-spec? (fn [spec] 
-                     (when (sequential? spec)
-                       (= attrib-name (first spec))))
-	extractor (comp next first)]
-    (extractor (filter type-spec? specs))))
+  (let [is-attrib? #(when (sequential? %)
+                      (= attrib-name (first %)))]
+    (->> specs
+         (filter is-attrib?)
+         last
+         rest)))
 
-(defn config-from [specs & attribs]
+(defn all-specs [specs & attribs]
   (let [config-kv (fn [attrib]
                     {(keyword attrib) (first (specs-for attrib specs))})]
     (apply merge (map config-kv attribs))))
