@@ -1,4 +1,4 @@
-(ns babble-spec
+(ns zolo.babble.feature-spec
  (:use [clojure.test :only [run-tests deftest is]])
  (:use org.rathore.amit.babble.feature))
 

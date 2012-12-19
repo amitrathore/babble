@@ -1,4 +1,4 @@
-(ns org.rathore.amit.babble.feature)
+(ns zolo.babble.feature)
 
 (defn specs-for [attrib-name specs]
   (let [type-spec? (fn [spec] 
